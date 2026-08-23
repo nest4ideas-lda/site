@@ -117,7 +117,18 @@
 
   /* ---------------------------- language choice --------------------------- */
 
-  var langLinks = document.querySelectorAll('.lang-opt')
+  var LOCALE_KEY = 'nest4ideas:locale'
+  var HINT_KEY = 'nest4ideas:locale-hint'
+  var langLinks = document.querySelectorAll('[data-lang]')
+
+  /** @returns {string|null} */
+  function readStorage(key) {
+    try {
+      return localStorage.getItem(key)
+    } catch (e) {
+      return null
+    }
+  }
 
   // The switch uses site-absolute paths, which point at the filesystem root
   // when the page is opened as a file rather than served.
@@ -134,15 +145,38 @@
   Array.prototype.forEach.call(langLinks, function (link) {
     link.addEventListener('click', function () {
       try {
-        localStorage.setItem(
-          'nest4ideas:locale',
-          link.getAttribute('data-lang'),
-        )
+        localStorage.setItem(LOCALE_KEY, link.getAttribute('data-lang'))
       } catch (e) {
         /* storage unavailable, the navigation still happens */
       }
     })
   })
+
+  /* ----------------------------- language hint ---------------------------- */
+
+  var hint = document.getElementById('lang-hint')
+
+  if (hint && !readStorage(LOCALE_KEY) && !readStorage(HINT_KEY)) {
+    var wantsPortuguese =
+      String(navigator.language || '')
+        .toLowerCase()
+        .indexOf('pt') === 0
+    var readingEnglish = document.documentElement.lang === 'en'
+
+    // Offer the other language only to someone who did not ask for this one.
+    if (readingEnglish === wantsPortuguese) hint.hidden = false
+
+    hint
+      .querySelector('.lang-hint-close')
+      .addEventListener('click', function () {
+        hint.hidden = true
+        try {
+          localStorage.setItem(HINT_KEY, 'dismissed')
+        } catch (e) {
+          /* storage unavailable, the hint returns on the next visit */
+        }
+      })
+  }
 
   /* ----------------------------- scroll reveal ---------------------------- */
 

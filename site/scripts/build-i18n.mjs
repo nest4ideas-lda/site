@@ -92,6 +92,44 @@ for (const option of doc.querySelectorAll('.lang-opt')) {
   }
 }
 
+// The hint always speaks the language it offers, so this page gets the opposite
+// of the source and hands its own wording back through the data-alt-* pair.
+const hint = doc.querySelector('#lang-hint')
+const hintText = hint.querySelector('.lang-hint-text')
+const hintGo = hint.querySelector('.lang-hint-go')
+const hintClose = hint.querySelector('.lang-hint-close')
+
+const offered = {
+  lang: hint.getAttribute('data-alt-lang'),
+  href: hint.getAttribute('data-alt-href'),
+  text: hint.getAttribute('data-alt-text'),
+  action: hint.getAttribute('data-alt-action'),
+  dismiss: hint.getAttribute('data-alt-dismiss'),
+}
+const current = {
+  lang: hintGo.getAttribute('data-lang'),
+  href: hintGo.getAttribute('href'),
+  text: hintText.textContent.trim(),
+  action: hintGo.textContent.trim(),
+  dismiss: hintClose.getAttribute('aria-label'),
+}
+
+hintText.set_content(escapeText(offered.text))
+hintText.setAttribute('lang', offered.lang)
+hintGo.set_content(escapeText(offered.action))
+hintGo.setAttribute('lang', offered.lang)
+hintGo.setAttribute('href', offered.href)
+hintGo.setAttribute('data-lang', offered.lang)
+hintClose.setAttribute('lang', offered.lang)
+hintClose.setAttribute('aria-label', offered.dismiss)
+hintClose.setAttribute('title', offered.dismiss)
+
+hint.setAttribute('data-alt-lang', current.lang)
+hint.setAttribute('data-alt-href', current.href)
+hint.setAttribute('data-alt-text', current.text)
+hint.setAttribute('data-alt-action', current.action)
+hint.setAttribute('data-alt-dismiss', current.dismiss)
+
 // One directory deeper, so document-relative asset URLs need a level added.
 for (const el of doc.querySelectorAll('[href], [src]')) {
   for (const attr of ['href', 'src']) {

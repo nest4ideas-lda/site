@@ -202,6 +202,61 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* ------------------------------ language hint ----------------------------- */
+
+.lang-hint {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.lang-hint[hidden] {
+  display: none;
+}
+
+.lang-hint-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  padding-block: 10px;
+}
+
+.lang-hint-text {
+  margin-inline-end: auto;
+}
+
+.lang-hint-go {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lang-hint-go:hover {
+  color: var(--primary);
+}
+
+.lang-hint-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.lang-hint-close:hover {
+  opacity: 1;
+}
+
+.lang-hint-close .icon {
+  width: 16px;
+  height: 16px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

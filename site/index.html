@@ -16,7 +16,13 @@
     <link rel="canonical" href="https://nest4ideas.com/" />
     <link rel="alternate" hreflang="pt-PT" href="https://nest4ideas.com/" />
     <link rel="alternate" hreflang="en" href="https://nest4ideas.com/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://nest4ideas.com/" />
+    <!-- English is the better fallback for a reader whose language matches
+         neither alternate. -->
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://nest4ideas.com/en/"
+    />
 
     <meta
       name="theme-color"
@@ -117,8 +123,8 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- TODO before go-live: add telephone, the registered office address and
-         sameAs (LinkedIn). The practice is remote with no premises to visit, so
+    <!-- TODO before go-live: add the registered office address and sameAs
+         (LinkedIn). The practice is remote with no premises to visit, so
          areaServed rather than a street address is the honest signal here. -->
     <script type="application/ld+json">
       {
@@ -130,6 +136,9 @@
         "logo": "https://nest4ideas.com/assets/img/icon-512.png",
         "image": "https://nest4ideas.com/assets/img/og-card.png",
         "email": "geral@nest4ideas.com",
+        "telephone": "+351917618442",
+        "vatID": "PT519507541",
+        "taxID": "519507541",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "PT"
@@ -155,6 +164,41 @@
     <a class="skip-link" href="#main" data-i18n="a11y.skip"
       >Saltar para o conteúdo</a
     >
+
+    <!-- Written in the language it offers, because the reader does not speak
+         the one they landed on. The data-alt-* values are the other direction,
+         which is what the generated page uses. Script decides whether to show
+         it; there is no redirect. -->
+    <aside
+      class="lang-hint"
+      id="lang-hint"
+      hidden
+      data-alt-lang="pt-PT"
+      data-alt-href="/"
+      data-alt-text="Esta página também está disponível em português."
+      data-alt-action="Ler em português"
+      data-alt-dismiss="Dispensar"
+    >
+      <div class="wrap lang-hint-inner">
+        <p class="lang-hint-text" lang="en">
+          This page is also available in English.
+        </p>
+        <a class="lang-hint-go" lang="en" href="/en/" data-lang="en"
+          >Read in English</a
+        >
+        <button
+          class="lang-hint-close"
+          type="button"
+          lang="en"
+          aria-label="Dismiss"
+          title="Dismiss"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </aside>
 
     <header class="site-header" id="top">
       <div class="wrap header-inner">
@@ -384,8 +428,8 @@
           </div>
 
           <!-- TODO before go-live: replace the [a preencher] placeholders with
-               the real OCC and CC registration numbers, the partner name and
-               the registered office as filed with the conservatória. -->
+               the OCC and CC registration numbers, and the registered office as
+               filed with the conservatória. -->
           <div class="card">
             <span class="eyebrow" data-i18n="about.cardEyebrow"
               >Identificação</span
@@ -397,9 +441,7 @@
                 Inscrição OCC n.º [a preencher]
               </dd>
               <dt data-i18n="about.partnersLabel">Sócios-gerentes</dt>
-              <dd data-i18n="about.partner1">
-                Diana [apelido], CC n.º [a preencher]
-              </dd>
+              <dd data-i18n="about.partner1">Diana Moliano, CC n.º 95303</dd>
               <dd data-i18n="about.partner2">
                 Tiago Nóbrega, CC n.º [a preencher]
               </dd>
@@ -472,8 +514,7 @@
             <span data-i18n="contact.city">100% remoto, em todo o país</span
             ><br />
             <a href="mailto:geral@nest4ideas.com">geral@nest4ideas.com</a><br />
-            <!-- TODO before go-live: replace with the real phone number. -->
-            <span data-i18n="contact.phone">+351 [a preencher]</span>
+            <a href="tel:+351917618442">+351&nbsp;917&nbsp;618&nbsp;442</a>
           </address>
         </div>
       </section>
@@ -481,10 +522,9 @@
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <!-- TODO before go-live: replace the NIPC and OCC placeholders. -->
+        <!-- TODO before go-live: replace the OCC registration placeholder. -->
         <span data-i18n="footer.legal"
-          >Nest4Ideas, Lda. · NIPC [a preencher] · Inscrição OCC [a
-          preencher]</span
+          >Nest4Ideas, Lda. · NIPC 519507541 · Inscrição OCC [a preencher]</span
         >
         <span>&copy; <span id="year">2026</span> Nest4Ideas</span>
       </div>

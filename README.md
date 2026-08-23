@@ -159,10 +159,8 @@ workflow instead.
 Search for `a preencher` and `to be added` and replace:
 
 - [ ] OCC registration number for the firm
-- [ ] CC numbers for both managing partners
-- [ ] the full name of the partner shown as `Diana [apelido]`
-- [ ] NIPC in the footer
-- [ ] phone number in the contact section
+- [ ] CC number for Tiago Nóbrega
+- [ ] confirm the registered office as filed with the conservatória
 - [ ] confirm `geral@nest4ideas.com` is the address that should receive enquiries
 
 ### Legal, to confirm with counsel
@@ -181,8 +179,7 @@ None of it is legal advice, so have it checked:
 
 - [ ] add a real contact form; a `mailto:` link silently fails for anyone
       without a mail client configured
-- [ ] fill in `telephone`, `streetAddress`, `geo`, `openingHoursSpecification`
-      and `sameAs` in the JSON-LD block, which local search results depend on
+- [ ] fill in the registered office and `sameAs` (LinkedIn) in the JSON-LD block
 - [ ] decide whether the Portuguese copy should address readers as `tu`
       (as it does now) or the more formal `você`
 - [ ] add social proof: client count, years in practice, or testimonials
