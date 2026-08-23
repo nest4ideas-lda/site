@@ -6,17 +6,21 @@
   "description": "Nest4Ideas marketing website (nest4ideas.com)",
   "scripts": {
     "dev": "python3 -m http.server 4173",
+    "build:i18n": "node scripts/build-i18n.mjs && prettier --write en/index.html --log-level warn",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
-    "check": "npm run format:check && npm run lint:check"
+    "validate": "html-validate index.html en/index.html 404.html",
+    "check": "npm run format:check && npm run lint:check && npm run validate"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.0.0",
+    "html-validate": "^10.2.0",
+    "node-html-parser": "^7.0.1",
     "prettier": "^3.8.4"
   }
 }

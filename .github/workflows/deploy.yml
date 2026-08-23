@@ -47,9 +47,11 @@ jobs:
             --exclude=.git \
             --exclude=.github \
             --exclude=./node_modules \
+            --exclude=./scripts \
             --exclude=./package.json \
             --exclude=./package-lock.json \
             --exclude=./eslint.config.js \
+            --exclude=./.htmlvalidate.json \
             --exclude=./.prettierrc.json \
             --exclude=./.prettierignore \
             .

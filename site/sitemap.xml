@@ -6,16 +6,18 @@
   <url>
     <loc>https://nest4ideas.com/</loc>
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://nest4ideas.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nest4ideas.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nest4ideas.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nest4ideas.com/"/>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nest4ideas.com/?lang=en</loc>
+    <loc>https://nest4ideas.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://nest4ideas.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nest4ideas.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nest4ideas.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nest4ideas.com/"/>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

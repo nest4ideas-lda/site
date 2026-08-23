@@ -1,7 +1,9 @@
 # Nest4Ideas website
 
-The marketing site for Nest4Ideas, an accounting and management practice based
-in Funchal, Madeira. It is published at [nest4ideas.com](https://nest4ideas.com/).
+The marketing site for Nest4Ideas, a fully remote accounting and management
+practice serving companies across Portugal. The team is split between Madeira
+and the mainland, there are no offices, and everything is handled digitally. It
+is published at [nest4ideas.com](https://nest4ideas.com/).
 
 The site is plain HTML, CSS and vanilla JavaScript. There is no build step: what
 is in [site/](site/) is exactly what is served. Node is used only for formatting
@@ -11,18 +13,22 @@ and linting.
 
 ```
 .github/
+  dependabot.yml                          keeps the pinned actions fresh
   scripts/check_conventional_commits.py   commit message validator
   workflows/                              lint, deploy, conventional commits
 site/                                     everything that gets published
-  index.html                              the page, Portuguese baseline copy
+  index.html                              the page, Portuguese, source of truth
+  en/index.html                           generated English page, do not edit
+  404.html                                not-found page
   site.webmanifest                        installable metadata
   robots.txt, sitemap.xml, CNAME          crawler and domain configuration
+  scripts/build-i18n.mjs                  generates en/index.html
+  scripts/og-card.html                    source for the social card image
   assets/
     css/style.css                         design tokens and all styling
     fonts/                                self-hosted Inter Variable
     i18n/en.json                          English translations
-    img/                                  icons, shared with the app
-    js/i18n.js                            runtime language switching
+    img/                                  icons and the social card
     js/main.js                            theme, navigation, scroll reveal
 ```
 
@@ -34,9 +40,13 @@ npm install
 npm run dev      # serves the folder on http://localhost:4173
 ```
 
-`npm run dev` uses Python's built-in HTTP server. Any static server works, but
-the page must be served over HTTP rather than opened as a `file://` URL,
-otherwise `fetch` cannot load the translation files.
+`npm run dev` uses Python's built-in HTTP server. Any static server works.
+
+Opening `site/index.html` straight from disk also works: the language switch
+uses site-absolute paths (`/` and `/en/`), which would point at the filesystem
+root under `file://`, so the script rewrites them to the matching files and
+skips the stored-language redirect. Serving the folder is still the accurate
+way to preview, since that is how the site is deployed.
 
 ## Brand
 
@@ -77,11 +87,13 @@ class on `<html>`, the same mechanism the app uses.
 
 ## Localization
 
-Portuguese is the canonical copy and ships directly in `index.html`, so the page
-is fully readable with JavaScript disabled. English is fetched from
-`assets/i18n/en.json` and swapped in at runtime.
+Portuguese lives in `index.html` and is the source of truth. English is
+**pre-rendered** into `site/en/index.html` by
+[site/scripts/build-i18n.mjs](site/scripts/build-i18n.mjs), so each language is a
+real, indexable URL that arrives fully translated. Nothing is swapped in at
+runtime, so English readers never see a flash of Portuguese.
 
-Elements opt in with two attributes:
+Elements opt in with two attributes, which the generator reads:
 
 ```html
 <h1 data-i18n="hero.title">Contabilidade que te dá clareza para decidir.</h1>
@@ -89,30 +101,41 @@ Elements opt in with two attributes:
 <button data-i18n-attr="aria-label:a11y.theme; title:a11y.theme">…</button>
 ```
 
-Language is resolved in this order: the `?lang=` query parameter, the
-`nest4ideas:locale` storage entry, then the browser languages. Selecting a
-language updates `<html lang>`, the address bar and the canonical link, so a
-copied URL opens in the same language it was read in.
+After editing `index.html` or `assets/i18n/en.json`, regenerate:
 
-Locale codes match the app (`pt-PT`, `en`). To add a language:
+```sh
+npm run build:i18n
+```
 
-1. Add the code to `SUPPORTED` in
-   [site/assets/js/i18n.js](site/assets/js/i18n.js).
-2. Add `site/assets/i18n/<code>.json` with the same keys as `en.json`.
-3. Add an `<li role="option" data-lang="<code>">` entry to the language menu in
-   `index.html`.
-4. Add the `hreflang` alternate in `<head>` and the matching entry in
-   `sitemap.xml`.
+The generated file is committed and CI fails if it has drifted. The generator
+also fails when a key is used in the markup but missing from `en.json`, or
+present in `en.json` but unused, so the two can never fall out of step.
 
-Missing keys fall back to the Portuguese baseline. Translations are applied with
-`textContent` and `setAttribute` only, never `innerHTML`, so a translation file
-cannot inject markup.
+The switcher in the header is two ordinary links, so it works with scripting
+disabled. The chosen language is stored under `nest4ideas:locale`, and a small
+pre-paint script sends a returning visitor to the page they last read. There is
+no automatic redirect based on browser language: `hreflang` tells search engines
+which version to serve, and visitors keep control.
+
+Locale codes match the app (`pt-PT`, `en`). To add a language, add
+`assets/i18n/<code>.json`, teach the generator the new code, add a link to the
+switcher, and add the `hreflang` alternate plus the `sitemap.xml` entry.
+
+Translations are applied with text and attribute assignment only, never raw
+markup, so a translation file cannot inject HTML.
+
+## The social card
+
+`assets/img/og-card.png` is the 1200x630 image used by Open Graph and Twitter.
+It is generated from [site/scripts/og-card.html](site/scripts/og-card.html); the
+regeneration command is in a comment at the top of that file. Regenerate it
+whenever the tagline changes.
 
 ## Formatting and linting
 
 ```sh
 cd site
-npm run check      # what CI runs
+npm run check      # what CI runs: Prettier, ESLint, html-validate
 npm run format     # apply Prettier
 npm run lint       # apply ESLint fixes
 ```
@@ -131,8 +154,9 @@ workflow instead.
 
 ## Before going live
 
-The page still carries placeholders from the original mockup. Search for
-`a preencher` and `to be added` and replace:
+### Placeholders still in the page
+
+Search for `a preencher` and `to be added` and replace:
 
 - [ ] OCC registration number for the firm
 - [ ] CC numbers for both managing partners
@@ -140,4 +164,27 @@ The page still carries placeholders from the original mockup. Search for
 - [ ] NIPC in the footer
 - [ ] phone number in the contact section
 - [ ] confirm `geral@nest4ideas.com` is the address that should receive enquiries
-- [ ] add a proper Open Graph image, currently the app icon is used
+
+### Legal, to confirm with counsel
+
+A Portuguese company selling services is generally expected to publish these.
+None of it is legal advice, so have it checked:
+
+- [ ] link to the Livro de Reclamações Eletrónico
+- [ ] the alternative dispute resolution entity the firm is bound to
+- [ ] full company identification: NIPC, share capital, conservatória do registo
+      comercial (Código das Sociedades Comerciais, article 171)
+- [ ] a privacy policy, which GDPR article 13 requires as soon as any contact
+      form exists
+
+### Worth doing before launch
+
+- [ ] add a real contact form; a `mailto:` link silently fails for anyone
+      without a mail client configured
+- [ ] fill in `telephone`, `streetAddress`, `geo`, `openingHoursSpecification`
+      and `sameAs` in the JSON-LD block, which local search results depend on
+- [ ] decide whether the Portuguese copy should address readers as `tu`
+      (as it does now) or the more formal `você`
+- [ ] add social proof: client count, years in practice, or testimonials
+- [ ] add a photo of the team; the page argues against being anonymous while
+      being anonymous

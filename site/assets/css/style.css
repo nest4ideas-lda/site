@@ -187,6 +187,21 @@ h3 {
   border-radius: 4px;
 }
 
+/* The closing panel keeps its dark surface in both themes, so the ring has to
+   be the gold rather than the light-theme primary to stay visible on it. */
+.cta :focus-visible {
+  outline-color: var(--deep-accent);
+}
+
+.skip-link:focus-visible {
+  outline-offset: -3px;
+}
+
+/* The open navigation panel covers the page; stop the page scrolling under it. */
+body.nav-open {
+  overflow: hidden;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -400,58 +415,36 @@ h3 {
   display: none;
 }
 
-/* Language menu */
+/* Language switch. Two real links, so it works with scripting disabled and
+   needs no menu semantics for a choice of two. */
 .lang {
-  position: relative;
-}
-
-.lang-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 168px;
-  list-style: none;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-md);
-  padding: 6px;
-  z-index: 60;
-}
-
-.lang-menu[hidden] {
-  display: none;
-}
-
-.lang-menu li {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 12px;
+  border: 1px solid var(--border);
   border-radius: var(--radius-input);
-  font-size: 0.9rem;
-  color: var(--muted-foreground);
-  cursor: pointer;
+  padding: 2px;
+  margin-inline-end: 2px;
 }
 
-.lang-menu li:hover,
-.lang-menu li:focus-visible {
+.lang-opt {
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.lang-opt:hover {
+  color: var(--foreground);
+}
+
+.lang-opt[aria-current='page'] {
   background: var(--secondary);
   color: var(--secondary-foreground);
-}
-
-.lang-menu li[aria-selected='true'] {
-  color: var(--foreground);
-  font-weight: 500;
-}
-
-.lang-menu li[aria-selected='true']::after {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--primary);
 }
 
 .theme-toggle .icon-moon {
@@ -528,8 +521,8 @@ html.dark .theme-toggle .icon-moon {
     height: 44px;
   }
 
-  .lang-menu li {
-    min-height: 44px;
+  .lang-opt {
+    padding: 9px 11px;
   }
 }
 
@@ -561,6 +554,11 @@ html.dark .theme-toggle .icon-moon {
 @media (max-width: 400px) {
   .hero-actions .btn {
     flex: 1 1 100%;
+  }
+
+  /* The mark alone carries the brand; the link keeps its accessible name. */
+  .brand-name {
+    display: none;
   }
 }
 
@@ -866,5 +864,29 @@ html.no-js .reveal {
 
   .btn:hover {
     transform: none;
+  }
+}
+
+/* Hairline borders and muted text are the first things to disappear when a
+   reader asks the OS for more contrast. */
+@media (prefers-contrast: more) {
+  :root {
+    --muted-foreground: #4a4a55;
+    --border: rgba(0, 0, 0, 0.3);
+    --border-strong: rgba(0, 0, 0, 0.45);
+  }
+
+  html.dark {
+    --muted-foreground: #d0d0d8;
+    --border: rgba(255, 255, 255, 0.32);
+    --border-strong: rgba(255, 255, 255, 0.5);
+    --deep-muted: #d0d0d8;
+  }
+
+  .btn,
+  .icon-btn,
+  .badge,
+  .lang {
+    border-color: currentColor;
   }
 }

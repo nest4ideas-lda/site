@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-PT" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página não encontrada | Nest4Ideas</title>
+    <meta name="robots" content="noindex" />
+
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f4f4f7"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#17171b"
+    />
+
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="48x48" />
+    <link
+      rel="icon"
+      href="/assets/img/favicon.svg"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+    <script>
+      document.documentElement.classList.remove('no-js')
+      document.documentElement.classList.add('js')
+      try {
+        var stored = localStorage.getItem('nest4ideas:theme')
+        var prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        var dark = stored === 'dark' || (!stored && prefersDark)
+        document.documentElement.classList.toggle('dark', dark)
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+      } catch (e) {
+        /* localStorage may be unavailable, fall back to the light theme */
+      }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label="Nest4Ideas, início">
+          <img
+            src="/assets/img/favicon.svg"
+            alt=""
+            width="28"
+            height="28"
+          />Nest4Ideas
+        </a>
+      </div>
+    </header>
+
+    <main id="main" class="hero">
+      <div class="wrap">
+        <span class="eyebrow" lang="pt-PT">Erro 404</span>
+        <h1 lang="pt-PT">Esta página não existe.</h1>
+        <p class="lede" lang="pt-PT">
+          O endereço está errado ou a página foi movida. Volta ao início ou
+          escreve-nos.
+        </p>
+        <p class="lede" lang="en">
+          This page does not exist. The address is wrong or the page has moved.
+          Go back to the start or write to us.
+        </p>
+        <div class="hero-actions">
+          <a href="/" class="btn btn-primary" lang="pt-PT">Voltar ao início</a>
+          <a href="mailto:geral@nest4ideas.com" class="btn btn-ghost"
+            >geral@nest4ideas.com</a
+          >
+        </div>
+        <div class="ledger-rule"></div>
+      </div>
+    </main>
+  </body>
+</html>

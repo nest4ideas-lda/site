@@ -59,6 +59,7 @@
 
   /* ------------------------------ mobile nav ------------------------------ */
 
+  var header = document.querySelector('.site-header')
   var navToggle = document.getElementById('nav-toggle')
   var nav = document.getElementById('site-nav')
   var mobileQuery = window.matchMedia('(max-width: 860px)')
@@ -71,6 +72,8 @@
     if (!nav || !navToggle) return
     nav.hidden = !open
     navToggle.setAttribute('aria-expanded', String(open))
+    // The open panel covers the page, so the page behind it must not scroll.
+    document.body.classList.toggle('nav-open', open && mobileQuery.matches)
   }
 
   /** Collapse the menu on small screens, always show it on large ones. */
@@ -103,7 +106,43 @@
         setNav(false)
       }
     })
+
+    // Rather than trap focus in what is only a disclosure, close the panel as
+    // soon as focus leaves it, so nothing is ever focused behind the overlay.
+    document.addEventListener('focusin', function (event) {
+      if (!mobileQuery.matches || nav.hidden || !header) return
+      if (!header.contains(event.target)) setNav(false)
+    })
   }
+
+  /* ---------------------------- language choice --------------------------- */
+
+  var langLinks = document.querySelectorAll('.lang-opt')
+
+  // The switch uses site-absolute paths, which point at the filesystem root
+  // when the page is opened as a file rather than served.
+  if (location.protocol === 'file:') {
+    var onEnglishPage = document.documentElement.lang === 'en'
+    var localHref = onEnglishPage
+      ? { 'pt-PT': '../index.html', en: 'index.html' }
+      : { 'pt-PT': 'index.html', en: 'en/index.html' }
+    Array.prototype.forEach.call(langLinks, function (link) {
+      link.setAttribute('href', localHref[link.getAttribute('data-lang')])
+    })
+  }
+
+  Array.prototype.forEach.call(langLinks, function (link) {
+    link.addEventListener('click', function () {
+      try {
+        localStorage.setItem(
+          'nest4ideas:locale',
+          link.getAttribute('data-lang'),
+        )
+      } catch (e) {
+        /* storage unavailable, the navigation still happens */
+      }
+    })
+  })
 
   /* ----------------------------- scroll reveal ---------------------------- */
 

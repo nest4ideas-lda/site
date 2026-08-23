@@ -1,0 +1,21 @@
+# Every action is pinned to a commit SHA, so without a bot the pins go stale
+# and silently miss security fixes.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
+
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: chore
+    groups:
+      dev-dependencies:
+        patterns:
+          - '*'

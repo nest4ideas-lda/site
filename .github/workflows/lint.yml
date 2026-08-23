@@ -48,3 +48,15 @@ jobs:
       - name: Check linting (ESLint)
         working-directory: site
         run: npm run lint:check
+
+      - name: Validate markup (html-validate)
+        working-directory: site
+        run: npm run validate
+
+      # en/index.html is generated from index.html, so a copy that drifts would
+      # silently ship stale English.
+      - name: Check the generated English page is in sync
+        working-directory: site
+        run: |
+          npm run build:i18n
+          git diff --exit-code -- en/index.html

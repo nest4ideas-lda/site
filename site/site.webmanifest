@@ -1,7 +1,12 @@
 {
+  "id": "/",
   "name": "Nest4Ideas",
   "short_name": "Nest4Ideas",
+  "description": "Contabilidade e gestão 100% remota, em todo o país.",
+  "lang": "pt-PT",
+  "dir": "ltr",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f4f4f7",
   "theme_color": "#c9a15c",

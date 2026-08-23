@@ -1,0 +1,119 @@
+<!doctype html>
+<!--
+  Source for assets/img/og-card.png, the 1200x630 social card.
+
+  Regenerate after changing the tagline or the brand colours:
+
+    "$HOME/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell" \
+      --headless --hide-scrollbars --window-size=1200,630 \
+      --screenshot=assets/img/og-card.png \
+      "file://$PWD/scripts/og-card.html"
+
+  Any headless Chrome works; the path above is just the one Playwright ships.
+-->
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nest4Ideas social card</title>
+    <style>
+      @font-face {
+        font-family: 'Inter Variable';
+        src: url('../assets/fonts/inter-latin-wght-normal.woff2')
+          format('woff2');
+        font-weight: 100 900;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #17171b;
+        color: #f3f3f5;
+        font-family: 'Inter Variable', system-ui, sans-serif;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: 66px 76px;
+        position: relative;
+      }
+
+      .rule {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 8px;
+        background: #c9a15c;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .top img {
+        width: 52px;
+        height: 52px;
+        border-radius: 13px;
+      }
+
+      .top span {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .mid {
+        display: flex;
+        align-items: center;
+      }
+
+      h1 {
+        max-width: 900px;
+        font-size: 54px;
+        line-height: 1.12;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+
+      h1 em {
+        font-style: normal;
+        color: #c9a15c;
+      }
+
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 21px;
+        color: #a0a0ab;
+      }
+
+      .foot strong {
+        color: #f3f3f5;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="rule"></div>
+    <div class="top">
+      <img src="../assets/img/favicon.svg" alt="" />
+      <span>Nest4Ideas</span>
+    </div>
+    <div class="mid">
+      <h1>Contabilidade que te dá <em>clareza para decidir</em>.</h1>
+    </div>
+    <div class="foot">
+      <span
+        ><strong>100% remoto</strong> · Contabilidade e gestão em Portugal</span
+      >
+      <span>nest4ideas.com</span>
+    </div>
+  </body>
+</html>
