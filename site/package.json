@@ -1,0 +1,22 @@
+{
+  "name": "nest4ideas-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Nest4Ideas marketing website (nest4ideas.com)",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "check": "npm run format:check && npm run lint:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.0.0",
+    "prettier": "^3.8.4"
+  }
+}

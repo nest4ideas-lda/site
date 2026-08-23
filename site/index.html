@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-PT" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="meta.title">
+      Nest4Ideas, contabilidade e gestão no Funchal
+    </title>
+    <meta
+      name="description"
+      data-i18n-attr="content:meta.description"
+      content="Gabinete de contabilidade no Funchal com visão de gestão. Obrigações fiscais sempre em dia e informação clara para decidires com confiança."
+    />
+
+    <link rel="canonical" href="https://nest4ideas.com/" />
+    <link rel="alternate" hreflang="pt-PT" href="https://nest4ideas.com/" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://nest4ideas.com/?lang=en"
+    />
+    <link rel="alternate" hreflang="x-default" href="https://nest4ideas.com/" />
+
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f4f4f7"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#17171b"
+    />
+
+    <!-- Icons, shared with the app so both surfaces carry the same mark. -->
+    <link rel="icon" href="assets/img/favicon.ico" sizes="48x48" />
+    <link
+      rel="icon"
+      href="assets/img/favicon.svg"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nest4Ideas" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:url" content="https://nest4ideas.com/" />
+    <meta
+      property="og:title"
+      data-i18n-attr="content:meta.title"
+      content="Nest4Ideas, contabilidade e gestão no Funchal"
+    />
+    <meta
+      property="og:description"
+      data-i18n-attr="content:meta.description"
+      content="Gabinete de contabilidade no Funchal com visão de gestão. Obrigações fiscais sempre em dia e informação clara para decidires com confiança."
+    />
+    <meta
+      property="og:image"
+      content="https://nest4ideas.com/assets/img/icon-512.png"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      data-i18n-attr="content:meta.title"
+      content="Nest4Ideas, contabilidade e gestão no Funchal"
+    />
+    <meta
+      name="twitter:description"
+      data-i18n-attr="content:meta.description"
+      content="Gabinete de contabilidade no Funchal com visão de gestão. Obrigações fiscais sempre em dia e informação clara para decidires com confiança."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nest4ideas.com/assets/img/icon-512.png"
+    />
+
+    <!-- Resolve the theme before paint so the page never flashes the wrong one. -->
+    <script>
+      document.documentElement.classList.remove('no-js')
+      document.documentElement.classList.add('js')
+      try {
+        var stored = localStorage.getItem('nest4ideas:theme')
+        var prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches
+        var dark = stored === 'dark' || (!stored && prefersDark)
+        document.documentElement.classList.toggle('dark', dark)
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+      } catch (e) {
+        /* localStorage may be unavailable, fall back to the light theme */
+      }
+    </script>
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="assets/fonts/inter-latin-wght-normal.woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Nest4Ideas",
+        "legalName": "Nest4Ideas, Lda.",
+        "url": "https://nest4ideas.com/",
+        "logo": "https://nest4ideas.com/assets/img/icon-512.png",
+        "image": "https://nest4ideas.com/assets/img/icon-512.png",
+        "email": "geral@nest4ideas.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Funchal",
+          "addressRegion": "Madeira",
+          "addressCountry": "PT"
+        },
+        "areaServed": "PT",
+        "availableLanguage": ["pt-PT", "en"]
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip"
+      >Saltar para o conteúdo</a
+    >
+
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a
+          class="brand"
+          href="#top"
+          data-i18n-attr="aria-label:a11y.home"
+          aria-label="Nest4Ideas, início"
+        >
+          <img src="assets/img/favicon.svg" alt="" width="28" height="28" />
+          Nest4Ideas
+        </a>
+
+        <nav
+          class="site-nav"
+          id="site-nav"
+          data-i18n-attr="aria-label:a11y.primaryNav"
+          aria-label="Principal"
+        >
+          <a href="#sobre" data-i18n="nav.about">Sobre</a>
+          <a href="#servicos" data-i18n="nav.services">Serviços</a>
+          <a href="#contacto" data-i18n="nav.contact">Contactos</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang" id="lang">
+            <button
+              class="icon-btn"
+              id="lang-toggle"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-menu"
+              data-i18n-attr="aria-label:a11y.langMenu; title:a11y.langMenu"
+              aria-label="Mudar idioma"
+              title="Mudar idioma"
+            >
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18" />
+              </svg>
+            </button>
+            <ul
+              class="lang-menu"
+              id="lang-menu"
+              role="listbox"
+              data-i18n-attr="aria-label:a11y.language"
+              aria-label="Idioma"
+              hidden
+            >
+              <li role="option" tabindex="0" data-lang="pt-PT">Português</li>
+              <li role="option" tabindex="0" data-lang="en">English</li>
+            </ul>
+          </div>
+
+          <button
+            class="icon-btn theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            data-i18n-attr="aria-label:a11y.theme; title:a11y.theme"
+            aria-label="Alternar tema claro e escuro"
+            title="Alternar tema claro e escuro"
+          >
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"
+              />
+            </svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+            </svg>
+          </button>
+
+          <a
+            href="#contacto"
+            class="btn btn-primary btn-cta"
+            data-i18n="nav.cta"
+            >Fala connosco</a
+          >
+
+          <button
+            class="icon-btn nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            data-i18n-attr="aria-label:a11y.menu; title:a11y.menu"
+            aria-label="Abrir menu"
+            title="Abrir menu"
+          >
+            <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap">
+          <span class="eyebrow" data-i18n="hero.eyebrow"
+            >Contabilidade e gestão · Funchal, Madeira</span
+          >
+          <h1 data-i18n="hero.title">
+            Contabilidade que te dá clareza para decidir.
+          </h1>
+          <p class="lede" data-i18n="hero.lede">
+            Não tratamos só de obrigações fiscais. Damos-te a informação certa,
+            no momento certo, para geres o teu negócio com confiança. Rigor
+            técnico com visão de gestão financeira.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="#contacto"
+              class="btn btn-primary"
+              data-i18n="hero.ctaPrimary"
+              >Fala connosco</a
+            >
+            <a
+              href="#servicos"
+              class="btn btn-ghost"
+              data-i18n="hero.ctaSecondary"
+              >Ver serviços</a
+            >
+          </div>
+
+          <div class="ledger-rule"></div>
+
+          <dl class="hero-facts">
+            <div>
+              <dt data-i18n="hero.fact1Label">Base</dt>
+              <dd data-i18n="hero.fact1Value">Funchal, Madeira</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.fact2Label">Foco</dt>
+              <dd data-i18n="hero.fact2Value">PME e gestores</dd>
+            </div>
+            <div>
+              <dt data-i18n="hero.fact3Label">Equipa</dt>
+              <dd data-i18n="hero.fact3Value">Contabilistas Certificados</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section-plain">
+        <div class="wrap reveal">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="pillars.eyebrow"
+              >Como trabalhamos</span
+            >
+            <h2 data-i18n="pillars.title">Três compromissos, sem exceção</h2>
+          </div>
+
+          <div class="ledger-list">
+            <div class="ledger-row">
+              <span class="ledger-num">01</span>
+              <h3 data-i18n="pillars.p1Title">Sempre em dia</h3>
+              <p data-i18n="pillars.p1Body">
+                SAFT, IVA, retenções e obrigações declarativas geridas sem
+                sustos nem prazos perdidos.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">02</span>
+              <h3 data-i18n="pillars.p2Title">
+                Informação que serve para decidir
+              </h3>
+              <p data-i18n="pillars.p2Body">
+                Reporting claro, pensado para gestão, não apenas documentos para
+                arquivar.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">03</span>
+              <h3 data-i18n="pillars.p3Title">Acompanhamento próximo</h3>
+              <p data-i18n="pillars.p3Body">
+                Respostas rápidas e disponibilidade real, não um gabinete
+                anónimo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="wrap about-grid reveal">
+          <div>
+            <span class="eyebrow" data-i18n="about.eyebrow">Sobre nós</span>
+            <h2 data-i18n="about.title">
+              Contabilidade vista de dentro da gestão
+            </h2>
+            <p data-i18n="about.body1">
+              A Nest4Ideas nasceu para ser mais do que um gabinete de
+              contabilidade tradicional. Somos uma equipa de Contabilistas
+              Certificados com experiência também do outro lado, em controlo
+              financeiro e gestão em empresas multinacionais.
+            </p>
+            <p data-i18n="about.body2">
+              Isso muda a forma como trabalhamos: não vemos a contabilidade como
+              um fim em si, mas como uma ferramenta para os gestores tomarem
+              melhores decisões. Trabalhamos com PME e gestores que querem mais
+              do que cumprir prazos, querem perceber o negócio através dos
+              números.
+            </p>
+            <div class="badge-row">
+              <span class="badge" data-i18n="about.badge1"
+                >Contabilistas Certificados</span
+              >
+              <span class="badge" data-i18n="about.badge2"
+                >Reporting de gestão</span
+              >
+              <span class="badge" data-i18n="about.badge3"
+                >Planeamento fiscal</span
+              >
+            </div>
+          </div>
+
+          <!-- TODO before go-live: replace the [a preencher] placeholders with
+               the real OCC and CC registration numbers, and the partner name. -->
+          <div class="card">
+            <span class="eyebrow" data-i18n="about.cardEyebrow"
+              >Identificação</span
+            >
+            <h3 data-i18n="about.cardTitle">Nest4Ideas, Lda.</h3>
+            <dl>
+              <dt data-i18n="about.occLabel">Sociedade de contabilidade</dt>
+              <dd data-i18n="about.occValue">
+                Inscrição OCC n.º [a preencher]
+              </dd>
+              <dt data-i18n="about.partnersLabel">Sócios-gerentes</dt>
+              <dd data-i18n="about.partner1">
+                Diana [apelido], CC n.º [a preencher]
+              </dd>
+              <dd data-i18n="about.partner2">
+                Tiago Nóbrega, CC n.º [a preencher]
+              </dd>
+              <dt data-i18n="about.hqLabel">Sede</dt>
+              <dd data-i18n="about.hqValue">Funchal, Madeira</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="servicos">
+        <div class="wrap reveal">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="services.eyebrow">Serviços</span>
+            <h2 data-i18n="services.title">O que fazemos</h2>
+          </div>
+
+          <div class="ledger-list">
+            <div class="ledger-row">
+              <span class="ledger-num">S01</span>
+              <h3 data-i18n="services.s1Title">Contabilidade e fiscalidade</h3>
+              <p data-i18n="services.s1Body">
+                Organização contabilística, declarações periódicas, IVA e IRC.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">S02</span>
+              <h3 data-i18n="services.s2Title">Processamento salarial</h3>
+              <p data-i18n="services.s2Body">
+                Folhas de vencimento e obrigações junto da Segurança Social.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">S03</span>
+              <h3 data-i18n="services.s3Title">Consultoria de gestão</h3>
+              <p data-i18n="services.s3Body">
+                Apoio a decisões, análise de rentabilidade e planeamento fiscal.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">S04</span>
+              <h3 data-i18n="services.s4Title">Constituição de empresas</h3>
+              <p data-i18n="services.s4Body">
+                Apoio desde o registo até à estrutura fiscal mais adequada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contacto">
+        <div class="wrap cta-grid">
+          <div>
+            <span class="eyebrow" data-i18n="contact.eyebrow">Contactos</span>
+            <h2 data-i18n="contact.title">
+              Queres um parceiro que te dá visibilidade sobre o teu negócio, não
+              só um gabinete que trata de papéis?
+            </h2>
+            <a
+              href="mailto:geral@nest4ideas.com"
+              class="btn btn-primary"
+              data-i18n="contact.cta"
+              >Enviar mensagem</a
+            >
+          </div>
+          <address class="cta-contact">
+            <strong>Nest4Ideas, Lda.</strong><br />
+            <span data-i18n="contact.city">Funchal, Madeira</span><br />
+            <a href="mailto:geral@nest4ideas.com">geral@nest4ideas.com</a><br />
+            <!-- TODO before go-live: replace with the real phone number. -->
+            <span data-i18n="contact.phone">+351 [a preencher]</span>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <!-- TODO before go-live: replace the NIPC and OCC placeholders. -->
+        <span data-i18n="footer.legal"
+          >Nest4Ideas, Lda. · NIPC [a preencher] · Inscrição OCC [a
+          preencher]</span
+        >
+        <span>&copy; <span id="year">2026</span> Nest4Ideas</span>
+      </div>
+    </footer>
+
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

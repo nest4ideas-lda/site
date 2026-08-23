@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nest4ideas.com/sitemap.xml

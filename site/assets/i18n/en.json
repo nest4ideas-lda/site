@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Nest4Ideas, accounting and management in Funchal",
+    "description": "An accounting practice in Funchal with a management mindset. Tax obligations always on time and clear information so you can decide with confidence."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "home": "Nest4Ideas home",
+    "primaryNav": "Primary",
+    "langMenu": "Change language",
+    "language": "Language",
+    "theme": "Toggle light and dark theme",
+    "menu": "Open menu"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Talk to us"
+  },
+  "hero": {
+    "eyebrow": "Accounting and management · Funchal, Madeira",
+    "title": "Accounting that gives you the clarity to decide.",
+    "lede": "We do more than file your tax returns. We give you the right information at the right time, so you can run your business with confidence. Technical rigour with a financial management perspective.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See services",
+    "fact1Label": "Based in",
+    "fact1Value": "Funchal, Madeira",
+    "fact2Label": "Focus",
+    "fact2Value": "SMEs and managers",
+    "fact3Label": "Team",
+    "fact3Value": "Certified Accountants"
+  },
+  "pillars": {
+    "eyebrow": "How we work",
+    "title": "Three commitments, no exceptions",
+    "p1Title": "Always on time",
+    "p1Body": "SAF-T, VAT, withholding tax and reporting obligations handled without surprises or missed deadlines.",
+    "p2Title": "Information you can decide on",
+    "p2Body": "Clear reporting built for management, not just documents to file away.",
+    "p3Title": "Close support",
+    "p3Body": "Quick answers from people who are genuinely available, not an anonymous back office."
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Accounting seen from inside management",
+    "body1": "Nest4Ideas was founded to be more than a traditional accounting practice. We are a team of Certified Accountants who have also worked on the other side, in financial control and management at multinational companies.",
+    "body2": "That changes how we work: we do not treat accounting as an end in itself, but as a tool that helps managers make better decisions. We work with SMEs and managers who want more than met deadlines, they want to understand the business through the numbers.",
+    "badge1": "Certified Accountants",
+    "badge2": "Management reporting",
+    "badge3": "Tax planning",
+    "cardEyebrow": "Legal details",
+    "cardTitle": "Nest4Ideas, Lda.",
+    "occLabel": "Accounting firm",
+    "occValue": "OCC registration no. [to be added]",
+    "partnersLabel": "Managing partners",
+    "partner1": "Diana [surname], CC no. [to be added]",
+    "partner2": "Tiago Nóbrega, CC no. [to be added]",
+    "hqLabel": "Registered office",
+    "hqValue": "Funchal, Madeira, Portugal"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What we do",
+    "s1Title": "Accounting and tax",
+    "s1Body": "Bookkeeping, periodic returns, VAT and corporate income tax.",
+    "s2Title": "Payroll",
+    "s2Body": "Payslips and social security obligations.",
+    "s3Title": "Management consulting",
+    "s3Body": "Decision support, profitability analysis and tax planning.",
+    "s4Title": "Company incorporation",
+    "s4Body": "Support from registration through to the right tax structure."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Want a partner who gives you visibility over your business, not just a practice that shuffles paperwork?",
+    "cta": "Send a message",
+    "city": "Funchal, Madeira, Portugal",
+    "phone": "+351 [to be added]"
+  },
+  "footer": {
+    "legal": "Nest4Ideas, Lda. · NIPC [to be added] · OCC registration [to be added]"
+  }
+}

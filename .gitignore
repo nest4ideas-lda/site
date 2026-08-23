@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.*
+!.env.example
