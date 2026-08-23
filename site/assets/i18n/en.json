@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Nest4Ideas, remote accounting and management in Portugal",
+    "title": "Nest4Ideas, fully remote accounting in Portugal",
     "description": "A fully digital accounting practice for companies anywhere in Portugal. Tax obligations always on time and clear information so you can decide with confidence.",
-    "cardAlt": "Nest4Ideas, remote accounting and management in Portugal"
+    "cardAlt": "Nest4Ideas, fully remote accounting and management in Portugal"
   },
   "a11y": {
     "skip": "Skip to content",
@@ -21,23 +21,21 @@
   "hero": {
     "eyebrow": "Accounting and management · Fully remote · Portugal",
     "title": "Accounting that gives you the clarity to decide.",
-    "lede": "We do more than file your tax returns. We give you the right information at the right time, so you can run your business with confidence. Technical rigour with a financial management perspective.",
+    "lede": "We do more than handle your tax obligations. We give you the right information at the right time, so you can run your business with confidence. Technical rigour with a financial management perspective.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "See services",
     "fact1Label": "Model",
     "fact1Value": "Fully remote",
-    "fact2Label": "Where",
-    "fact2Value": "Madeira, Azores, and the mainland",
-    "fact3Label": "Focus",
-    "fact3Value": "SMEs and managers",
-    "fact4Label": "Team",
-    "fact4Value": "Certified Accountants"
+    "fact2Label": "Focus",
+    "fact2Value": "SMEs and managers",
+    "fact3Label": "Team",
+    "fact3Value": "Certified Accountants"
   },
   "pillars": {
     "eyebrow": "How we work",
     "title": "Three commitments, no exceptions",
-    "p1Title": "Always on time",
-    "p1Body": "SAF-T, VAT, withholding tax and reporting obligations handled without surprises or missed deadlines.",
+    "p1Title": "Always up to date",
+    "p1Body": "SAF-T, VAT, withholding tax and reporting obligations handled with rigour and on time.",
     "p2Title": "Information you can decide on",
     "p2Body": "Clear reporting built for management, not just documents to file away.",
     "p3Title": "Close support",
@@ -47,7 +45,7 @@
     "eyebrow": "About us",
     "title": "Accounting seen from inside management",
     "body1": "Nest4Ideas was founded to be more than a traditional accounting practice. We are a team of Certified Accountants who have also worked on the other side, in financial control and management at multinational companies.",
-    "body2": "That changes how we work: we do not treat accounting as an end in itself, but as a tool that helps managers make better decisions. We work with SMEs and managers who want more than met deadlines, they want to understand the business through the numbers.",
+    "body2": "That changes how we work: we do not treat accounting as an end in itself, but as a tool that helps managers make better decisions. We work with SMEs and managers who want more than just hitting deadlines, they want to understand the business through the numbers.",
     "body3": "We work with no offices and no paper. The team is split between Madeira and the mainland and every process is digital, so we can work with you wherever you are in the country.",
     "badge1": "Certified Accountants",
     "badge2": "Management reporting",
@@ -58,10 +56,10 @@
     "occValue": "OCC registration no. [to be added]",
     "partnersLabel": "Managing partners",
     "partner1": "Diana Moliano, CC no. 95303",
-    "partner2": "Tiago Nóbrega, CC no. [to be added]",
+    "partner2": "Tiago Nóbrega, CC no. 104160",
     "hqLabel": "Registered office",
     "hqValue": "Funchal, Madeira",
-    "modelLabel": "How we work",
+    "modelLabel": "Working model",
     "modelValue": "Fully remote, across Portugal"
   },
   "services": {

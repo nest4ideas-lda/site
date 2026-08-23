@@ -124,6 +124,13 @@ switcher, and add the `hreflang` alternate plus the `sitemap.xml` entry.
 Translations are applied with text and attribute assignment only, never raw
 markup, so a translation file cannot inject HTML.
 
+### Voice
+
+The Portuguese copy addresses the reader as `tu`, not `você`: *"Contabilidade
+que **te** dá clareza"*, *"para **gerires** o teu negócio"*, *"**Fala**
+connosco"*. This is deliberate, so keep new copy in the same register. English
+has no equivalent distinction and simply uses "you".
+
 ## The social card
 
 `assets/img/og-card.png` is the 1200x630 image used by Open Graph and Twitter.
@@ -156,12 +163,19 @@ workflow instead.
 
 ### Placeholders still in the page
 
-Search for `a preencher` and `to be added` and replace:
+- [ ] OCC registration number for the firm, which appears twice: the
+      identification card and the footer. Search for `a preencher` and
+      `to be added`.
 
-- [ ] OCC registration number for the firm
-- [ ] CC number for Tiago Nóbrega
-- [ ] confirm the registered office as filed with the conservatória
-- [ ] confirm `geral@nest4ideas.com` is the address that should receive enquiries
+### Values inherited from the mockup, never verified
+
+These are not placeholders, so they will not show up in a search. They were
+carried over from the original mockup and nobody has confirmed them:
+
+- [ ] `about.hqValue` reads "Funchal, Madeira". It is labelled *Sede social* /
+      *Registered office*, so it has to be the address on file at the
+      Conservatória do Registo Comercial, and normally the full street address
+      rather than just the city.
 
 ### Legal, to confirm with counsel
 
@@ -180,8 +194,6 @@ None of it is legal advice, so have it checked:
 - [ ] add a real contact form; a `mailto:` link silently fails for anyone
       without a mail client configured
 - [ ] fill in the registered office and `sameAs` (LinkedIn) in the JSON-LD block
-- [ ] decide whether the Portuguese copy should address readers as `tu`
-      (as it does now) or the more formal `você`
 - [ ] add social proof: client count, years in practice, or testimonials
 - [ ] add a photo of the team; the page argues against being anonymous while
       being anonymous
