@@ -428,10 +428,6 @@ body.nav-open {
   border-radius: 7px;
 }
 
-.brand span {
-  color: var(--primary);
-}
-
 .site-nav {
   display: flex;
   align-items: center;
