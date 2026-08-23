@@ -167,16 +167,6 @@ workflow instead.
       identification card and the footer. Search for `a preencher` and
       `to be added`.
 
-### Values inherited from the mockup, never verified
-
-These are not placeholders, so they will not show up in a search. They were
-carried over from the original mockup and nobody has confirmed them:
-
-- [ ] `about.hqValue` reads "Funchal, Madeira". It is labelled *Sede social* /
-      *Registered office*, so it has to be the address on file at the
-      Conservatória do Registo Comercial, and normally the full street address
-      rather than just the city.
-
 ### Legal, to confirm with counsel
 
 A Portuguese company selling services is generally expected to publish these.
@@ -193,7 +183,7 @@ None of it is legal advice, so have it checked:
 
 - [ ] add a real contact form; a `mailto:` link silently fails for anyone
       without a mail client configured
-- [ ] fill in the registered office and `sameAs` (LinkedIn) in the JSON-LD block
+- [ ] add `sameAs` (LinkedIn) to the JSON-LD block
 - [ ] add social proof: client count, years in practice, or testimonials
 - [ ] add a photo of the team; the page argues against being anonymous while
       being anonymous

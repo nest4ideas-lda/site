@@ -123,9 +123,11 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- TODO before go-live: add the registered office address and sameAs
-         (LinkedIn). The practice is remote with no premises to visit, so
-         areaServed rather than a street address is the honest signal here. -->
+    <!-- The sede social is published in the page for CSC article 171, but is
+         deliberately left out of the structured data: clients are never served
+         there, and a street address biases Google towards local Funchal
+         results rather than the nationwide reach the practice actually has.
+         TODO before go-live: add sameAs (LinkedIn). -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -423,9 +425,7 @@
             </div>
           </div>
 
-          <!-- TODO before go-live: add the OCC registration number below, and
-               confirm "Funchal, Madeira" is the sede social on file at the
-               Conservatória, which is usually a full street address. -->
+          <!-- TODO before go-live: add the OCC registration number below. -->
           <div class="card">
             <span class="eyebrow" data-i18n="about.cardEyebrow"
               >Identificação</span
@@ -440,7 +440,9 @@
               <dd data-i18n="about.partner1">Diana Moliano, CC n.º 95303</dd>
               <dd data-i18n="about.partner2">Tiago Nóbrega, CC n.º 104160</dd>
               <dt data-i18n="about.hqLabel">Sede social</dt>
-              <dd data-i18n="about.hqValue">Funchal, Madeira</dd>
+              <dd data-i18n="about.hqValue">
+                Travessa Nova do Pico do Funcho, n.º 24, 9000-240 Funchal, Portugal
+              </dd>
               <dt data-i18n="about.modelLabel">Modelo de trabalho</dt>
               <dd data-i18n="about.modelValue">100% remoto, em todo o país</dd>
             </dl>
