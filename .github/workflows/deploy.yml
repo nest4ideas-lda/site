@@ -2,13 +2,13 @@ name: Deploy site
 
 on:
   workflow_dispatch:
-  #push:
-  #  branches:
-  #    - main
-  #    - master
-  #  paths:
-  #    - site/**
-  #    - .github/workflows/deploy.yml
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - site/**
+      - .github/workflows/deploy.yml
 
 permissions:
   contents: read
