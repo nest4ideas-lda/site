@@ -52,8 +52,6 @@
     "badge3": "Tax planning",
     "cardEyebrow": "Legal details",
     "cardTitle": "Nest4Ideas, Lda.",
-    "occLabel": "Accounting firm",
-    "occValue": "OCC registration no. [to be added]",
     "partnersLabel": "Managing partners",
     "partner1": "Diana Moliano, CC no. 95303",
     "partner2": "Tiago Nóbrega, CC no. 104160",
@@ -69,10 +67,14 @@
     "s1Body": "Bookkeeping, periodic returns, VAT and corporate income tax.",
     "s2Title": "Payroll",
     "s2Body": "Payslips and social security obligations.",
-    "s3Title": "Management consulting",
-    "s3Body": "Decision support, profitability analysis and tax planning.",
-    "s4Title": "Company incorporation",
-    "s4Body": "Support from registration through to the right tax structure."
+    "s3Title": "Management reporting",
+    "s3Body": "Periodic reporting, dashboards and key performance indicators (KPIs), as a standalone service or integrated with accounting.",
+    "s4Title": "Financial planning and analysis (FP&A)",
+    "s4Body": "Budgets, forecasts, variance analysis and scenarios to anticipate results and support decision-making.",
+    "s5Title": "Management consulting",
+    "s5Body": "Decision support, profitability analysis and tax planning.",
+    "s6Title": "Company incorporation",
+    "s6Body": "Support from registration through to the right tax structure."
   },
   "contact": {
     "eyebrow": "Contact",
@@ -81,6 +83,7 @@
     "city": "Fully remote, across Portugal"
   },
   "footer": {
-    "legal": "Nest4Ideas, Lda. · NIPC 519507541 · OCC registration [to be added]"
+    "legal": "Nest4Ideas, Lda. · NIPC 519507541 · Registered office: Travessa Nova do Pico do Funcho, n.º 24, 9000-240 Funchal, Portugal",
+    "complaints": "Complaints Book"
   }
 }

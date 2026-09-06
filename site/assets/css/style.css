@@ -876,6 +876,17 @@ html.dark .theme-toggle .icon-moon {
   font-variant-numeric: tabular-nums;
 }
 
+.footer-inner a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer-inner a:hover,
+.footer-inner a:focus-visible {
+  color: var(--foreground);
+}
+
 /* ------------------------------- motion ---------------------------------- */
 
 .reveal {

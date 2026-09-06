@@ -142,22 +142,21 @@
         "telephone": "+351917618442",
         "vatID": "PT519507541",
         "taxID": "519507541",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "PT"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Portugal"
-        },
+        "address": { "@type": "PostalAddress", "addressCountry": "PT" },
+        "areaServed": { "@type": "Country", "name": "Portugal" },
         "currenciesAccepted": "EUR",
         "knowsLanguage": ["pt-PT", "en"],
         "availableLanguage": ["pt-PT", "en"],
         "makesOffer": [
-          { "@type": "Offer", "name": "Contabilidade e fiscalidade" },
-          { "@type": "Offer", "name": "Processamento salarial" },
-          { "@type": "Offer", "name": "Consultoria de gestão" },
-          { "@type": "Offer", "name": "Constituição de empresas" }
+          { "@type": "Offer", "name": "Accounting and tax" },
+          { "@type": "Offer", "name": "Payroll" },
+          { "@type": "Offer", "name": "Management reporting" },
+          {
+            "@type": "Offer",
+            "name": "Financial planning and analysis (FP&A)"
+          },
+          { "@type": "Offer", "name": "Management consulting" },
+          { "@type": "Offer", "name": "Company incorporation" }
         ]
       }
     </script>
@@ -420,17 +419,12 @@
             </div>
           </div>
 
-          <!-- TODO before go-live: add the OCC registration number below. -->
           <div class="card">
             <span class="eyebrow" data-i18n="about.cardEyebrow"
               >Legal details</span
             >
             <h3 data-i18n="about.cardTitle">Nest4Ideas, Lda.</h3>
             <dl>
-              <dt data-i18n="about.occLabel">Accounting firm</dt>
-              <dd data-i18n="about.occValue">
-                OCC registration no. [to be added]
-              </dd>
               <dt data-i18n="about.partnersLabel">Managing partners</dt>
               <dd data-i18n="about.partner1">Diana Moliano, CC no. 95303</dd>
               <dd data-i18n="about.partner2">Tiago Nóbrega, CC no. 104160</dd>
@@ -472,15 +466,33 @@
             </div>
             <div class="ledger-row">
               <span class="ledger-num">S03</span>
-              <h3 data-i18n="services.s3Title">Management consulting</h3>
+              <h3 data-i18n="services.s3Title">Management reporting</h3>
               <p data-i18n="services.s3Body">
-                Decision support, profitability analysis and tax planning.
+                Periodic reporting, dashboards and key performance indicators
+                (KPIs), as a standalone service or integrated with accounting.
               </p>
             </div>
             <div class="ledger-row">
               <span class="ledger-num">S04</span>
-              <h3 data-i18n="services.s4Title">Company incorporation</h3>
+              <h3 data-i18n="services.s4Title">
+                Financial planning and analysis (FP&amp;A)
+              </h3>
               <p data-i18n="services.s4Body">
+                Budgets, forecasts, variance analysis and scenarios to
+                anticipate results and support decision-making.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">S05</span>
+              <h3 data-i18n="services.s5Title">Management consulting</h3>
+              <p data-i18n="services.s5Body">
+                Decision support, profitability analysis and tax planning.
+              </p>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-num">S06</span>
+              <h3 data-i18n="services.s6Title">Company incorporation</h3>
+              <p data-i18n="services.s6Body">
                 Support from registration through to the right tax structure.
               </p>
             </div>
@@ -516,10 +528,16 @@
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <!-- TODO before go-live: replace the OCC registration placeholder. -->
         <span data-i18n="footer.legal"
-          >Nest4Ideas, Lda. · NIPC 519507541 · OCC registration [to be
-          added]</span
+          >Nest4Ideas, Lda. · NIPC 519507541 · Registered office: Travessa Nova
+          do Pico do Funcho, n.º 24, 9000-240 Funchal, Portugal</span
+        >
+        <a
+          href="https://www.livroreclamacoes.pt/Inicio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="footer.complaints"
+          >Complaints Book</a
         >
         <span>&copy; <span id="year">2026</span> Nest4Ideas</span>
       </div>

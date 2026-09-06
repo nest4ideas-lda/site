@@ -84,6 +84,13 @@ doc
   .querySelector('meta[property="og:locale:alternate"]')
   .setAttribute('content', 'pt_PT')
 
+const structuredData = doc.querySelector('script[type="application/ld+json"]')
+const schema = JSON.parse(structuredData.textContent)
+for (const [index, offer] of schema.makesOffer.entries()) {
+  offer.name = dict.services[`s${index + 1}Title`]
+}
+structuredData.set_content(JSON.stringify(schema))
+
 for (const option of doc.querySelectorAll('.lang-opt')) {
   if (option.getAttribute('data-lang') === LANG) {
     option.setAttribute('aria-current', 'page')
