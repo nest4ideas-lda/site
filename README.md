@@ -1,9 +1,10 @@
 # Nest4Ideas website
 
-The marketing site for Nest4Ideas, a fully remote accounting and management
-practice serving companies across Portugal. The team is split between Madeira
-and the mainland, there are no offices, and everything is handled digitally. It
-is published at [nest4ideas.com](https://nest4ideas.com/).
+The public source for the Nest4Ideas marketing site. Nest4Ideas is a fully
+remote accounting and management practice serving companies across Portugal.
+The team is split between Madeira and the mainland, there are no offices, and
+everything is handled digitally. The site is published at
+[nest4ideas.com](https://nest4ideas.com/).
 
 The site is plain HTML, CSS and vanilla JavaScript. There is no build step: what
 is in [site/](site/) is exactly what is served. Node is used only for formatting
@@ -33,6 +34,15 @@ site/                                     everything that gets published
 ```
 
 ## Local development
+
+```sh
+git clone https://github.com/nest4ideas-lda/site.git
+cd site/site
+npm install
+npm run dev      # serves the folder on http://localhost:4173
+```
+
+If the repository is already checked out:
 
 ```sh
 cd site
@@ -147,6 +157,25 @@ npm run format     # apply Prettier
 npm run lint       # apply ESLint fixes
 ```
 
+## Contributing
+
+Bug reports and focused pull requests are welcome. For larger changes, open an
+[issue](https://github.com/nest4ideas-lda/site/issues) first so the approach can
+be agreed before implementation.
+
+Keep Portuguese copy in European Portuguese (`pt-PT`) and update English
+translations when changing user-facing text. Before opening a pull request,
+regenerate `en/index.html` when needed and run:
+
+```sh
+cd site
+npm run build:i18n
+npm run check
+```
+
+Commit messages are checked in CI and must follow the
+[Conventional Commits](https://www.conventionalcommits.org/) format.
+
 ## Deployment
 
 Pushing to `main` runs
@@ -158,32 +187,3 @@ lint configuration) are excluded from the artifact. The custom domain comes from
 Every action is pinned to a commit SHA. `actions/upload-pages-artifact` calls an
 unpinned `actions/upload-artifact` internally, so its steps are inlined in the
 workflow instead.
-
-## Before going live
-
-### Placeholders still in the page
-
-- [ ] OCC registration number for the firm, which appears twice: the
-      identification card and the footer. Search for `a preencher` and
-      `to be added`.
-
-### Legal, to confirm with counsel
-
-A Portuguese company selling services is generally expected to publish these.
-None of it is legal advice, so have it checked:
-
-- [ ] link to the Livro de Reclamações Eletrónico
-- [ ] the alternative dispute resolution entity the firm is bound to
-- [ ] full company identification: NIPC, share capital, conservatória do registo
-      comercial (Código das Sociedades Comerciais, article 171)
-- [ ] a privacy policy, which GDPR article 13 requires as soon as any contact
-      form exists
-
-### Worth doing before launch
-
-- [ ] add a real contact form; a `mailto:` link silently fails for anyone
-      without a mail client configured
-- [ ] add `sameAs` (LinkedIn) to the JSON-LD block
-- [ ] add social proof: client count, years in practice, or testimonials
-- [ ] add a photo of the team; the page argues against being anonymous while
-      being anonymous
